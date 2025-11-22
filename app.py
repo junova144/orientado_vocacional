@@ -1,0 +1,31 @@
+# app.py
+
+import streamlit as st
+from rag_agent import build_agent
+from langchain_core.messages import HumanMessage
+
+st.title("🧭 Orientador Vocacional - RAG + LLM")
+
+st.write("Escribe una pregunta sobre orientación vocacional.")
+
+query = st.text_input("Pregunta:")
+
+if st.button("Consultar"):
+    if not query:
+        st.warning("Por favor ingresa una pregunta.")
+    else:
+        agent = build_agent()
+
+        with st.spinner("Buscando información..."):
+            config = {"configurable": {"thread_id": "user"}}
+            response = None
+
+            for step in agent.stream(
+                {"messages": [HumanMessage(content=query)]},
+                config,
+                stream_mode="values",
+            ):
+                response = step["messages"][-1].content
+
+        st.subheader("Respuesta del agente:")
+        st.write(response)

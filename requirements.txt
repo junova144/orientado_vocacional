@@ -1,0 +1,11 @@
+streamlit
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-elasticsearch
+langgraph
+llama-index
+llama-index-core
+llama-index-vector-stores-elasticsearch
+openai
