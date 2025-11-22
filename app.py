@@ -37,5 +37,6 @@ if st.button("Consultar"):
 
 
 # Texto al final
-st.caption("Desarrollado por Junova")
+st.caption("Desarrollado por Junova - Proyecto de Inteligencia Artificial Generativa")
+
 
