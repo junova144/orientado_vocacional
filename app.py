@@ -36,4 +36,6 @@ if st.button("Consultar"):
         st.write(response)
 
 
+# Texto al final
+st.caption("Desarrollado por Junova")
 
